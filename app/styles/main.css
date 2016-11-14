@@ -1,0 +1,163 @@
+body {
+  background-color: white; }
+  body div, body p, body li {
+    font-size: 14px; }
+  body input[type="radio"] {
+    margin: 0px; }
+  body .columns.right {
+    background-color: green; }
+    @media (min-width: 640px) and (max-width: 999px) {
+      body .columns.right {
+        width: 60%; } }
+    body .columns.right .navigation {
+      margin: 5px 0 15px;
+      padding: 0 0 20px;
+      border-bottom: 1px solid gray; }
+  body .columns.left {
+    background-color: lightgray; }
+    @media (min-width: 640px) and (max-width: 999px) {
+      body .columns.left {
+        width: 40%; } }
+  body .navigation {
+    height: 45px; }
+    body .navigation .my-left {
+      margin: 7px 0 0 0; }
+    @media (max-width: 768px) {
+      body .navigation .previous::before {
+        content: "<"; } }
+    @media (max-width: 768px) {
+      body .navigation .previous .my-label {
+        display: none; } }
+    @media (max-width: 768px) {
+      body .navigation .next::before {
+        content: ">"; } }
+    @media (max-width: 768px) {
+      body .navigation .next .my-label {
+        display: none; } }
+  body .right-space {
+    padding: 0 30px 0 0; }
+    @media (min-width: 640px) and (max-width: 999px) {
+      body .right-space {
+        padding: 0 8px 0 0; } }
+    @media (max-width: 639px) {
+      body .right-space {
+        padding: 0 4px 0 0; } }
+  @media (min-width: 320px) and (max-width: 999px) {
+    body .view-all {
+      display: none; } }
+  body .my-right {
+    float: right; }
+    body .my-right .sort {
+      min-width: 145px;
+      width: auto; }
+  body .search-label {
+    display: inline;
+    margin: 5px 0 0 0; }
+    body .search-label .search {
+      display: inline;
+      width: auto;
+      height: 20px;
+      margin: 0;
+      padding: 0; }
+  body table.count {
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+    padding: 0; }
+    body table.count tr td {
+      width: 25%; }
+  body .slider, body .my-slider {
+    margin: 5px 15px; }
+  body .facet {
+    border-bottom: 1px solid red;
+    clear: both;
+    margin-bottom: 10px; }
+  body .container {
+    margin: 0 0 20px;
+    overflow: hidden;
+    clear: both; }
+  body .box {
+    padding: 0;
+    background-color: blue;
+    margin: 0 5px;
+    height: 20px;
+    width: calc(100% / 3); }
+  body .clear-all {
+    margin: 10px 0 0 0;
+    display: inline-block; }
+    @media (max-width: 400px) {
+      body .clear-all.right {
+        display: none; } }
+  body .bottle-count {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  body .flex-container {
+    padding: 0;
+    margin: 0 10px;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex; }
+  body .space-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+  body .flex-item {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center; }
+  body ul {
+    margin-bottom: 5px;
+    list-style-type: none;
+    overflow: hidden; }
+  body .item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray; }
+    body .item .description {
+      line-height: 140%; }
+    body .item .my-left {
+      width: 100px; }
+    body .item .image-holder {
+      width: 75px;
+      height: 200px;
+      margin: 0 10px 0 0;
+      background-color: lightgray; }
+    body .item .text {
+      width: calc(100% - 100px); }
+    body .item .add {
+      margin-bottom: 0; }
+      body .item .add input {
+        width: 75px;
+        display: inline; }
+  @media (min-width: 401px) {
+    body .collapse .toggle {
+      display: none; } }
+  @media (max-width: 400px) {
+    body .collapse + div {
+      display: none; } }
+  @media (max-width: 400px) {
+    body .collapse.my-show + div {
+      display: flex; } }
+  @media (max-width: 400px) {
+    body .collapse.my-show + div.block {
+      display: block; } }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*# sourceMappingURL=main.css.map */

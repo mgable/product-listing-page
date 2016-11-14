@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<title></title>
+			<!-- build:css(.) styles/vendor.css -->
+			<!-- bower:css -->
+			<link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+			<!-- endbower -->
+			<!-- endbuild -->
+			<!-- build:css(.tmp) styles/main.css -->
+			  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+			<link rel="stylesheet" href="styles/main.css">
+			
+			<!-- endbuild -->
+		</head>
+		<body ng-app="productListingPage" ng-controller="Main">
+			
+			<div class="row">
+				<div class="small-12 medium-4 columns left filters">
+					<p>
+						<span>Shop Wines</span> &gt; <span>Bottles</span>
+					</p>
+					<div class="clear-all right">Clear All</div>
+
+					<h4 class="left collapse" collapse title="Filters"></h4>
+					<div class="holder block">
+						<div class="container">
+							<p class="facet collapse" collapse title="Color:"></p>
+							<div class="row flex-container space-between">
+								<div class="box flex-item"></div>
+								<div class="box flex-item"></div>
+								<div class="box flex-item"></div>
+							</div>
+						</div>
+
+						<div class="container">
+							<p class="facet collapse" collapse title="Price range:"></p>
+							<div class="block">
+								<label for="amount"></label>
+								<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+								<div id="slider-range" class="my-slider"></div>
+							</div>
+							
+						</div>
+
+						<div class="container">
+							<p class="facet collapse" collapse title="Bottle Count:"></p>
+							<div class="block">
+								<ul class="flex-container space-between">
+									<li class="flex-item"><label for="pokemonRed"><input type="radio" name="pokemon" value="Red" id="pokemonRed" required>&nbsp;1</label></li>
+									<li class="flex-item"><label for="pokemonRed"><input type="radio" name="pokemon" value="Red" id="pokemonRed" required>&nbsp;6</label></li>
+									<li class="flex-item"><label for="pokemonRed"><input type="radio" name="pokemon" value="Red" id="pokemonRed" required>&nbsp;12</label></li>
+									<li class="flex-item"><label for="pokemonRed"><input type="radio" name="pokemon" value="Red" id="pokemonRed" required>&nbsp;15</label></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="container" expand>
+							<p class="facet collapse" collapse title="Varietal:"></p>
+							<div class="block">
+								<ul>
+									<li>Cabernet Sauvignon (1477)</li>
+									<li>Bordeaux Blends (994)</li>
+									<li>Pinot Noir (1776)</li>
+									<li>Other Red Blends (1006)</li>
+									<li>Sangiovese (368)</li>
+									<li>Syrah/Shiraz (613)</li>
+									<li>Rhône Blends (437)</li>
+									<li>Barbera (80)</li>
+									<li>Cabernet Franc (74)</li>
+									<li>Carmenere (41)</li>
+									<li>Dolcetto (31)</li>
+									<li>Gamay (55)</li>
+									<li>Grenache (154)</li>
+									<li>Malbec (233)</li>
+									<li>Merlot (323)</li>
+									<li>Mourvedre (33)</li>
+									<li>Nebbiolo (249)</li>
+									<li>Nero d'Avola (29)</li>
+									<li>Other Red Wine (273)</li>
+									<li>Petite Sirah (88)</li>
+									<li>Pinotage (15)</li>
+									<li>Primitivo (21)</li>
+									<li>Tempranillo (290)</li>
+									<li>Zinfandel (397)</li>
+								</ul>
+								<a expander ng-click="action()">Show All</a>
+							</div>
+						</div>	
+
+						<div class="container" expand>
+							<p class="facet collapse" collapse title="Country:"></p>
+							<div class="block">
+								<ul>
+									<li>Argentina (55)</li>
+									<li>Australia (152)</li>
+									<li>Austria (94)</li>
+									<li>Canada (2)</li>
+									<li>Chile (44)</li>
+									<li>Croatia (13)</li>
+									<li>France (3241)</li>
+									<li>Georgia (11)</li>
+									<li>Germany (163)</li>
+									<li>Greece (45)</li>
+									<li>Hungary (21)</li>
+									<li>Israel (8)</li>
+									<li>Italy (666)</li>
+									<li>Lebanon (8)</li>
+									<li>Mexico (11)</li>
+									<li>New Zealand (122)</li>
+									<li>Other International (11)</li>
+									<li>Portugal (109)</li>
+									<li>Slovenia (13)</li>
+									<li>South Africa (49)</li>
+									<li>Spain (324)</li>
+									<li>Turkey (2)</li>
+									<li>United States (4194)</li>
+								</ul>
+								<a expander ng-click="action()">Show All</a>
+							</div>
+						</div>
+
+						<div class="container" expand>
+							<p class="facet collapse" collapse title="Region:">Region</p>
+							<div class="block">
+								<ul>
+									<li>Abruzzo (7)</li>
+									<li>Alsace (64)</li>
+									<li>Beaujolais (31)</li>
+									<li>Bordeaux (1340)</li>
+									<li>Burgundy (711)</li>
+									<li>California (3758)</li>
+									<li>Campania (24)</li>
+									<li>Chablis (67)</li>
+									<li>Champagne (295)</li>
+									<li>Emilia Romagna (4)</li>
+									<li>Friuli-Venezia-Giulia (17)</li>
+									<li>Languedoc-Roussillon (90)</li>
+									<li>Loire (188)</li>
+									<li>Lombardy (10)</li>
+									<li>Madeira (9)</li>
+									<li>Marche (6)</li>
+									<li>Mosel-Saar-Ruwer (73)</li>
+									<li>Nahe (22)</li>
+									<li>Navarra (2)</li>
+									<li>New South Wales (4)</li>
+									<li>New York (4)</li>
+									<li>Oregon (239)</li>
+									<li>Penedes (19)</li>
+									<li>Pfalz (13)</li>
+									<li>Piedmont (189)</li>
+									<li>Port (71)</li>
+									<li>Priorato (23)</li>
+									<li>Provence (52)</li>
+									<li>Puglia (7)</li>
+									<li>Rheingau (26)</li>
+									<li>Rheinhessen (13)</li>
+									<li>Rhone (354)</li>
+									<li>Rias Baixas (9)</li>
+									<li>Ribera del Duero (32)</li>
+									<li>Rioja (101)</li>
+									<li>Sardinia (4)</li>
+									<li>Savoie/Jura (31)</li>
+									<li>Sherry (56)</li>
+									<li>Sicily (23)</li>
+									<li>South Australia (103)</li>
+									<li>Southwest France (12)</li>
+									<li>Trentino-Alto Adige (15)</li>
+									<li>Tuscany (284)</li>
+									<li>Umbria (12)</li>
+									<li>Veneto (48)</li>
+									<li>Victoria (21)</li>
+									<li>Washington (180)</li>
+									<li>Western Australia (14)</li>
+								</ul>
+								<a expander ng-click="action()">Show All</a>
+							</div>
+						</div>
+						<div class="clear-all">Clear All</div>
+					</div>
+					
+				</div>
+
+				<div class="small-12 medium-8 columns right results">
+					<div class="navigation">
+						<span class="my-left left">
+							<span class="right-space previous"><span class="my-label">Previous</span></span>
+							<span class="right-space total">20 of 234 Results</span>
+							<span class="right-space next"><span class="my-label">Next</span></span>
+							<span class="right-space view-all">View All</span>
+						</span>
+						<span class="my-right">
+							<label class="search-label"> Sort By</label>
+							<select class="sort">
+								<option>Price (low to high)</option>
+								<option>Price (high to low)</option>
+								<option>Product Title (a to z)</option>
+								<option>Product Title (z to a)</option>
+								<option>Reviews (low to high)</option>
+								<option>Reviews (high to low)</option>
+								<option>Display Order</option>
+								<option>Stock Availability</option>
+								<option>Sales Items</option>
+							</select>
+						</span>	
+					</div>	
+					<div>
+						<div class="item clearfix">
+							<div class="my-left left">
+								<div class="image-holder"></div>
+							</div>
+							<div class="left text">
+								<h4 class="name">Wine Name Wine Name</h4>
+								<p class="status">In stock</p>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
+								<p class="product details">View Product Details</p>
+								<p class="add">
+									<span class="price">$19.99</span>
+									<input type="text" value="1" />
+									<button class="button tiny">Add to cart</button>
+								</p>
+							</div>
+						</div>
+
+						<div class="item clearfix">
+							<div class="my-left left">
+								<div class="image-holder"></div>
+							</div>
+							<div class="left text">
+								<p class="name">Wine Name Wine Name</p>
+								<p class="status">In stock</p>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
+								<p class="product details">View Product Details</p>
+								<p class="add">
+									<span class="price">$19.99</span>
+									<input type="text" value="1" />
+									<button class="button tiny">Add to cart</button>
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- build:js(.) scripts/vendor.js -->
+			<!-- bower:js -->
+			
+			<script src="bower_components/underscore/underscore.js"></script>
+			<script src="bower_components/angular/angular.js"></script>
+			<script src="bower_components/foundation-sites/dist/foundation.js"></script>
+			<!-- endbower -->
+		<!-- endbuild -->
+
+			<script src="scripts/app.js"></script>
+		</body>
+</html>
