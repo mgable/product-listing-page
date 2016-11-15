@@ -33,16 +33,16 @@
 				var expanded = false,
 					labelElm = angular.element(element);
 
-				labelElm.text("Show more");
+				labelElm.html("View All &gt;");
 
 				ctrl.close();
 
 				scope.action = function(){
 					if (expanded){
-						labelElm.text("Show more");
+						labelElm.html("View All &gt;");
 						ctrl.close();
 					} else {
-						labelElm.text("Show less");
+						labelElm.html("View Less &gt;");
 						ctrl.open();
 					}
 					expanded = !expanded;

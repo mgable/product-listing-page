@@ -4,35 +4,63 @@
 			<title></title>
 			<!-- build:css(.) styles/vendor.css -->
 			<!-- bower:css -->
-			<link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+			<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+			<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 			<!-- endbower -->
 			<!-- endbuild -->
 			<!-- build:css(.tmp) styles/main.css -->
 			  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-			  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-			  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 			<link rel="stylesheet" href="styles/main.css">
 			
 			<!-- endbuild -->
 		</head>
 		<body ng-app="productListingPage" ng-controller="Main">
+			<div class="row top-nav">
+				<div class="small-12 medium-4 columns">
+					<span class="left my-left">Shop Wines &gt; Bottles</span>
+				</div>
+				<div class="small-12 medium-8 columns">
+					<div class="navigation">
+						<span class="my-left left">
+							<span class="right-space previous"><span class="my-label">Previous</span></span>
+							<span class="right-space total">20 of 234 Results</span>
+							<span class="right-space next"><span class="my-label">Next</span></span>
+							<span class="right-space view-all">View All</span>
+						</span>
+						<span class="my-right">
+							<label class="search-label"> Sort By</label>
+							<select class="sort radius">
+								<option>Price (low to high)</option>
+								<option>Price (high to low)</option>
+								<option>Product Title (a to z)</option>
+								<option>Product Title (z to a)</option>
+								<option>Reviews (low to high)</option>
+								<option>Reviews (high to low)</option>
+								<option>Display Order</option>
+								<option>Stock Availability</option>
+								<option>Sales Items</option>
+							</select>
+						</span>	
+					</div>	
+					
+				</div>
+			</div>
 			
 			<div class="row">
 				<div class="small-12 medium-4 columns left filters">
-					<p>
-						<span>Shop Wines</span> &gt; <span>Bottles</span>
-					</p>
+					<div class="mobile">Shop Wines &gt; Bottles</div>
 					<div class="clear-all right">Clear All</div>
+
 
 					<h4 class="left collapse" collapse title="Filters"></h4>
 					<div class="holder block">
 						<div class="container">
 							<p class="facet collapse" collapse title="Color:"></p>
 							<div class="row flex-container space-between">
-								<div class="box flex-item"></div>
-								<div class="box flex-item"></div>
-								<div class="box flex-item"></div>
+								<div class="circle red flex-item" style="position:relative;"><span style="position:absolute;bottom:-7px;right:0;"><i class="fa fa-check-circle" aria-hidden="true"></i><span></div>
+								<div class="circle rose flex-item"></div>
+								<div class="circle white flex-item"></div>
 							</div>
 						</div>
 
@@ -40,13 +68,13 @@
 							<p class="facet collapse" collapse title="Price range:"></p>
 							<div class="block">
 								<label for="amount"></label>
-								<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+								<input type="text" id="amount" readonly class="priceRange" />
 								<div id="slider-range" class="my-slider"></div>
 							</div>
 							
 						</div>
 
-						<div class="container">
+<!-- 						<div class="container">
 							<p class="facet collapse" collapse title="Bottle Count:"></p>
 							<div class="block">
 								<ul class="flex-container space-between">
@@ -56,7 +84,7 @@
 									<li class="flex-item"><label for="pokemonRed"><input type="radio" name="pokemon" value="Red" id="pokemonRed" required>&nbsp;15</label></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="container" expand>
 							<p class="facet collapse" collapse title="Varietal:"></p>
@@ -87,7 +115,7 @@
 									<li>Tempranillo (290)</li>
 									<li>Zinfandel (397)</li>
 								</ul>
-								<a expander ng-click="action()">Show All</a>
+								<a expander class="expander" ng-click="action()">Show All</a>
 							</div>
 						</div>	
 
@@ -119,7 +147,7 @@
 									<li>Turkey (2)</li>
 									<li>United States (4194)</li>
 								</ul>
-								<a expander ng-click="action()">Show All</a>
+								<a class="expander" expander ng-click="action()">Show All</a>
 							</div>
 						</div>
 
@@ -176,68 +204,70 @@
 									<li>Washington (180)</li>
 									<li>Western Australia (14)</li>
 								</ul>
-								<a expander ng-click="action()">Show All</a>
+								<a expander class="expander" ng-click="action()">Show All</a>
 							</div>
 						</div>
+
 						<div class="clear-all">Clear All</div>
+
 					</div>
 					
+					<div class="row mobile" style="clear:both;text-align: center">
+						<span class="right-space previous"><span class="my-label">Previous</span></span>
+						<span class="right-space total">20 of 234 Results</span>
+						<span class="right-space next"><span class="my-label">Next</span></span>
+					</div>
+
+					<div class="row mobile" style="text-align:center;">
+						<select class="sort" style="width:150px">
+							<option>Price (low to high)</option>
+							<option>Price (high to low)</option>
+							<option>Product Title (a to z)</option>
+							<option>Product Title (z to a)</option>
+							<option>Reviews (low to high)</option>
+							<option>Reviews (high to low)</option>
+							<option>Display Order</option>
+							<option>Stock Availability</option>
+							<option>Sales Items</option>
+						</select>
+					</div>
+
 				</div>
 
 				<div class="small-12 medium-8 columns right results">
-					<div class="navigation">
-						<span class="my-left left">
-							<span class="right-space previous"><span class="my-label">Previous</span></span>
-							<span class="right-space total">20 of 234 Results</span>
-							<span class="right-space next"><span class="my-label">Next</span></span>
-							<span class="right-space view-all">View All</span>
-						</span>
-						<span class="my-right">
-							<label class="search-label"> Sort By</label>
-							<select class="sort">
-								<option>Price (low to high)</option>
-								<option>Price (high to low)</option>
-								<option>Product Title (a to z)</option>
-								<option>Product Title (z to a)</option>
-								<option>Reviews (low to high)</option>
-								<option>Reviews (high to low)</option>
-								<option>Display Order</option>
-								<option>Stock Availability</option>
-								<option>Sales Items</option>
-							</select>
-						</span>	
-					</div>	
 					<div>
 						<div class="item clearfix">
 							<div class="my-left left">
-								<div class="image-holder"></div>
+								<div class="image-holder"><img src="images/medium.png"/></div>
 							</div>
 							<div class="left text">
-								<h4 class="name">Wine Name Wine Name</h4>
+								<h4 class="name">2014 River's End Merlot</h4>
 								<p class="status">In stock</p>
 								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
-								<p class="product details">View Product Details</p>
+								<p class="product details">View Product Details &gt;</p>
+								<p class="rating"><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i></p>
 								<p class="add">
 									<span class="price">$19.99</span>
-									<input type="text" value="1" />
-									<button class="button tiny">Add to cart</button>
+									<input type="text" value="1" class="radius"/>
+									<button class="button tiny add-to-cart radius">Add to cart</button>
 								</p>
 							</div>
 						</div>
 
 						<div class="item clearfix">
 							<div class="my-left left">
-								<div class="image-holder"></div>
+								<div class="image-holder"><img src="images/medium.png"/></div>
 							</div>
 							<div class="left text">
-								<p class="name">Wine Name Wine Name</p>
+								<h4 class="name">2015 Big Cirrus Syrah</h4>
 								<p class="status">In stock</p>
 								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
-								<p class="product details">View Product Details</p>
+								<p class="product details">View Product Details &gt;</p>
+									<p class="rating"><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i></p>
 								<p class="add">
 									<span class="price">$19.99</span>
-									<input type="text" value="1" />
-									<button class="button tiny">Add to cart</button>
+									<input type="text" value="1" class="radius" />
+									<button class="button tiny add-to-cart radius">Add to cart</button>
 								</p>
 							</div>
 						</div>
@@ -248,12 +278,18 @@
 
 			<!-- build:js(.) scripts/vendor.js -->
 			<!-- bower:js -->
-			
+			<script src="bower_components/jquery/dist/jquery.js"></script>
 			<script src="bower_components/underscore/underscore.js"></script>
 			<script src="bower_components/angular/angular.js"></script>
-			<script src="bower_components/foundation-sites/dist/foundation.js"></script>
+			<script src="bower_components/fastclick/lib/fastclick.js"></script>
+			<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+			<script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+			<script src="bower_components/foundation/js/foundation.js"></script>
 			<!-- endbower -->
 		<!-- endbuild -->
+
+			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 			<script src="scripts/app.js"></script>
 		</body>
