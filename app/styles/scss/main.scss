@@ -1,9 +1,11 @@
 $lightgray: #eee;
 $gray:     #cacaca;
 $redWine: #910b0b;
+$black: #222;
 
 body {
 	background-color: white;
+	color: $black;
 
 	div, p, li {
 		font-size: 14px;
@@ -42,12 +44,33 @@ body {
 		margin: 7px 0 0 0;
 	}
 
-	h4.name {
-		margin-bottom: 0;
+	.retail {
+		color: $redWine;
+		font-size: 12px;
+	}
+
+	h5 {
+		font-weight: bold;
+		&.name {
+			color: $black;
+			margin-bottom: 0;
+		}
+	}
+
+	.selected {
+		color: $redWine;
+		font-weight: bold;
 	}
 
 	.status {
-		font-size: 12px;
+		font: {
+			size: 12px;
+			style: italic;
+		}
+		&.out-of-stock {
+			color: $redWine
+		}
+
 	}
 
 	.navigation {
@@ -100,10 +123,17 @@ body {
 
 	.my-right {
 		float: right;
-		.sort {
-			min-width: 145px;
-			width: auto;
-			margin: 0;
+
+	}
+
+	.sort {
+		height: 30px;
+		padding: 0 5px 0 10px;
+		min-width: 145px;
+		width: auto;
+		margin: 0;
+		@media (max-width: 400px) {
+			margin: 10px 0;
 		}
 	}
 
@@ -145,6 +175,9 @@ body {
 		margin: 0 0 20px;
 		overflow: hidden;
 		clear: both;
+		@media(max-width: 400px){
+			margin: 0 0 5px;
+		}
 	}
 
 	.box {
@@ -156,13 +189,18 @@ body {
 	}
 
 	.expander {
-		color: black;
+		font-weight: bold;
+		color: $black;
 		text-decoration: underline;
 	}
 
 	.clear-all{
 		margin:10px 0 0 0;
 		display:inline-block;
+		text-decoration: underline;
+		&.last {
+			margin:0;
+		}
 		&.right {
 			@media(max-width: 400px){
 				display:none;
@@ -170,8 +208,11 @@ body {
 		}
 	}
 
-	.add-to-cart {
-		background-color: $redWine
+	button.tiny.add-to-cart {
+		background-color: $redWine;
+		font-size: 13px;
+		height: 32px;
+		padding: 4px 20px;
 	}
 
 
@@ -270,13 +311,20 @@ body {
 		}
 		margin-bottom: 10px;
 		border-bottom: 1px solid $gray;
-		padding: 10px 0 0 0;
+		padding: 10px 10px 0 5px;
 	}
 
 	.collapse .toggle {
+		i {
+			color: $redWine;
+		}
 		@media(min-width: 401px){
 			display:none;
 		}
+	}
+
+	.breadcrumb {
+		font-weight: bold;
 	}
 
 	.circle {
@@ -284,6 +332,17 @@ body {
 		width: 60px;
 		-moz-border-radius: 30px;
 		border-radius: 30px;
+		cursor: pointer;
+		position:relative;
+		.check-circle{
+			display:none;
+		}
+		&.selected .check-circle {
+			display:block;
+			position:absolute;
+			bottom:-7px;
+			right:0;
+		}
 	}
 
 	.priceRange {

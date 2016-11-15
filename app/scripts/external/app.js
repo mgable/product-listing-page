@@ -2,6 +2,8 @@
 
 (function(){
 	"use strict";
+
+	console.info("XXXXXXXXX");
 	angular.module("productListingPage",[]);
 
 	angular.module("productListingPage").controller("Main", function($scope){
@@ -53,7 +55,7 @@
 	}).directive("collapse", function(){
 		return{
 			restrict: "AE",
-			template: "<span><span>{{title}}</span><a class='right toggle' ng-click='toggle()'>&gt;</a><span>",
+			template: "<span><span>{{title}}</span><a class='right toggle' ng-click='toggle()'>&nbsp;<i class='fa fa-chevron-circle-right' aria-hidden='true'></i></a><span>",
 			scope: {
 				title: "@"
 			},
@@ -61,7 +63,6 @@
 				var target = angular.element(element),
 				 	closed = true;
 				
-				console.info(target);
 				scope.toggle = function(){
 					if (closed){
 						target.addClass("my-show");		
@@ -76,16 +77,22 @@
 
 
 	$(function() {
-		$( "#slider-range" ).slider({
-			range: true,
-			min: 0,
-			max: 500,
-			values: [ 75, 300 ],
-			slide: function( event, ui ) {
-				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-			}
-		});
-		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		console.info("making range slider");
+		try {
+			$( "#slider-range" ).slider({
+				range: true,
+				min: 0,
+				max: 500,
+				values: [ 75, 300 ],
+				slide: function( event, ui ) {
+					$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				}
+			});
+			$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+
+			console.info($( "#slider-range" ));
+		}catch(e){console.info(e);console.info("error!!!");}
 	});
 
 

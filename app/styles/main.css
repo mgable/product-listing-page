@@ -1,5 +1,6 @@
 body {
-  background-color: white; }
+  background-color: white;
+  color: #222; }
   body div, body p, body li {
     font-size: 14px; }
   body input[type="radio"] {
@@ -20,10 +21,22 @@ body {
         width: 40%; } }
   body .my-left {
     margin: 7px 0 0 0; }
-  body h4.name {
-    margin-bottom: 0; }
-  body .status {
+  body .retail {
+    color: #910b0b;
     font-size: 12px; }
+  body h5 {
+    font-weight: bold; }
+    body h5.name {
+      color: #222;
+      margin-bottom: 0; }
+  body .selected {
+    color: #910b0b;
+    font-weight: bold; }
+  body .status {
+    font-size: 12px;
+    font-style: italic; }
+    body .status.out-of-stock {
+      color: #910b0b; }
   body .navigation {
     height: 45px; }
     @media (max-width: 768px) {
@@ -51,10 +64,15 @@ body {
       display: none; } }
   body .my-right {
     float: right; }
-    body .my-right .sort {
-      min-width: 145px;
-      width: auto;
-      margin: 0; }
+  body .sort {
+    height: 30px;
+    padding: 0 5px 0 10px;
+    min-width: 145px;
+    width: auto;
+    margin: 0; }
+    @media (max-width: 400px) {
+      body .sort {
+        margin: 10px 0; } }
   body .search-label {
     display: inline;
     margin: 5px 0 0 0; }
@@ -83,6 +101,9 @@ body {
     margin: 0 0 20px;
     overflow: hidden;
     clear: both; }
+    @media (max-width: 400px) {
+      body .container {
+        margin: 0 0 5px; } }
   body .box {
     padding: 0;
     background-color: blue;
@@ -90,16 +111,23 @@ body {
     height: 20px;
     width: calc(100% / 3); }
   body .expander {
-    color: black;
+    font-weight: bold;
+    color: #222;
     text-decoration: underline; }
   body .clear-all {
     margin: 10px 0 0 0;
-    display: inline-block; }
+    display: inline-block;
+    text-decoration: underline; }
+    body .clear-all.last {
+      margin: 0; }
     @media (max-width: 400px) {
       body .clear-all.right {
         display: none; } }
-  body .add-to-cart {
-    background-color: #910b0b; }
+  body button.tiny.add-to-cart {
+    background-color: #910b0b;
+    font-size: 13px;
+    height: 32px;
+    padding: 4px 20px; }
   body .bottle-count {
     margin: 0;
     padding: 0;
@@ -146,7 +174,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
     margin-bottom: 10px;
     border-bottom: 1px solid #cacaca;
-    padding: 10px 0 0 0; }
+    padding: 10px 10px 0 5px; }
     body .item .description {
       line-height: 140%; }
     body .item .my-left {
@@ -167,14 +195,27 @@ body {
         height: 33px;
         display: inline;
         text-align: center; }
+  body .collapse .toggle i {
+    color: #910b0b; }
   @media (min-width: 401px) {
     body .collapse .toggle {
       display: none; } }
+  body .breadcrumb {
+    font-weight: bold; }
   body .circle {
     height: 60px;
     width: 60px;
     -moz-border-radius: 30px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative; }
+    body .circle .check-circle {
+      display: none; }
+    body .circle.selected .check-circle {
+      display: block;
+      position: absolute;
+      bottom: -7px;
+      right: 0; }
   body .priceRange {
     border: 0;
     font-weight: bold;

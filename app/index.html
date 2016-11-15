@@ -6,10 +6,10 @@
 			<!-- bower:css -->
 			<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
 			<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+			<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css" />
 			<!-- endbower -->
 			<!-- endbuild -->
 			<!-- build:css(.tmp) styles/main.css -->
-			  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 			<link rel="stylesheet" href="styles/main.css">
 			
@@ -17,10 +17,10 @@
 		</head>
 		<body ng-app="productListingPage" ng-controller="Main">
 			<div class="row top-nav">
-				<div class="small-12 medium-4 columns">
+				<div class="small-12 medium-3 columns">
 					<span class="left my-left">Shop Wines &gt; Bottles</span>
 				</div>
-				<div class="small-12 medium-8 columns">
+				<div class="small-12 medium-9 columns">
 					<div class="navigation">
 						<span class="my-left left">
 							<span class="right-space previous"><span class="my-label">Previous</span></span>
@@ -48,24 +48,24 @@
 			</div>
 			
 			<div class="row">
-				<div class="small-12 medium-4 columns left filters">
-					<div class="mobile">Shop Wines &gt; Bottles</div>
+				<div class="small-12 medium-3 columns left filters">
+					<div class="mobile breadcrumb">Shop Wines &gt; Bottles</div>
 					<div class="clear-all right">Clear All</div>
 
 
-					<h4 class="left collapse" collapse title="Filters"></h4>
+					<h5 class="left collapse" collapse title="Filters"></h5>
 					<div class="holder block">
 						<div class="container">
-							<p class="facet collapse" collapse title="Color:"></p>
-							<div class="row flex-container space-between">
-								<div class="circle red flex-item" style="position:relative;"><span style="position:absolute;bottom:-7px;right:0;"><i class="fa fa-check-circle" aria-hidden="true"></i><span></div>
-								<div class="circle rose flex-item"></div>
-								<div class="circle white flex-item"></div>
+							<p class="facet collapse" collapse title="Color"></p>
+							<div class="row flex-container space-between" ng-init="selected = 'red'">
+								<div ng-click="selected = 'red'" class="circle red flex-item" ng-class="{'selected': selected === 'red'}"><span class="check-circle"><i class="fa fa-check-circle" aria-hidden="true"></i><span></div>
+								<div ng-click="selected = 'rose'" class="circle rose flex-item" ng-class="{'selected': selected === 'rose'}"><span class="check-circle"><i class="fa fa-check-circle" aria-hidden="true"></i><span></div>
+								<div ng-click="selected = 'white'" class="circle white flex-item" ng-class="{'selected': selected === 'white'}"><span class="check-circle"><i class="fa fa-check-circle" aria-hidden="true"></i><span></div>
 							</div>
 						</div>
 
 						<div class="container">
-							<p class="facet collapse" collapse title="Price range:"></p>
+							<p class="facet collapse" collapse title="Price range"></p>
 							<div class="block">
 								<label for="amount"></label>
 								<input type="text" id="amount" readonly class="priceRange" />
@@ -87,11 +87,11 @@
 						</div> -->
 
 						<div class="container" expand>
-							<p class="facet collapse" collapse title="Varietal:"></p>
+							<p class="facet collapse" collapse title="Varietal"></p>
 							<div class="block">
 								<ul>
 									<li>Cabernet Sauvignon (1477)</li>
-									<li>Bordeaux Blends (994)</li>
+									<li class="selected">Bordeaux Blends (994)</li>
 									<li>Pinot Noir (1776)</li>
 									<li>Other Red Blends (1006)</li>
 									<li>Sangiovese (368)</li>
@@ -120,13 +120,13 @@
 						</div>	
 
 						<div class="container" expand>
-							<p class="facet collapse" collapse title="Country:"></p>
+							<p class="facet collapse" collapse title="Country"></p>
 							<div class="block">
 								<ul>
 									<li>Argentina (55)</li>
 									<li>Australia (152)</li>
 									<li>Austria (94)</li>
-									<li>Canada (2)</li>
+									<li class="selected">Canada (2)</li>
 									<li>Chile (44)</li>
 									<li>Croatia (13)</li>
 									<li>France (3241)</li>
@@ -152,14 +152,14 @@
 						</div>
 
 						<div class="container" expand>
-							<p class="facet collapse" collapse title="Region:">Region</p>
+							<p class="facet collapse" collapse title="Region">Region</p>
 							<div class="block">
 								<ul>
 									<li>Abruzzo (7)</li>
 									<li>Alsace (64)</li>
 									<li>Beaujolais (31)</li>
 									<li>Bordeaux (1340)</li>
-									<li>Burgundy (711)</li>
+									<li class="selected">Burgundy (711)</li>
 									<li>California (3758)</li>
 									<li>Campania (24)</li>
 									<li>Chablis (67)</li>
@@ -208,14 +208,14 @@
 							</div>
 						</div>
 
-						<div class="clear-all">Clear All</div>
+						<div class="clear-all last mobile"><a>Clear All</a></div>
 
 					</div>
 					
 					<div class="row mobile" style="clear:both;text-align: center">
-						<span class="right-space previous"><span class="my-label">Previous</span></span>
+						<span class="right-space previous"><span class="my-label"><a href="#">Previous</a></span></span>
 						<span class="right-space total">20 of 234 Results</span>
-						<span class="right-space next"><span class="my-label">Next</span></span>
+						<span class="right-space next"><span class="my-label"><a href="#">Next</a></span></span>
 					</div>
 
 					<div class="row mobile" style="text-align:center;">
@@ -234,14 +234,14 @@
 
 				</div>
 
-				<div class="small-12 medium-8 columns right results">
+				<div class="small-12 medium-9 columns right results">
 					<div>
 						<div class="item clearfix">
 							<div class="my-left left">
 								<div class="image-holder"><img src="images/medium.png"/></div>
 							</div>
 							<div class="left text">
-								<h4 class="name">2014 River's End Merlot</h4>
+								<h5 class="name">2014 River's End Merlot</h5>
 								<p class="status">In stock</p>
 								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
 								<p class="product details">View Product Details &gt;</p>
@@ -259,20 +259,22 @@
 								<div class="image-holder"><img src="images/medium.png"/></div>
 							</div>
 							<div class="left text">
-								<h4 class="name">2015 Big Cirrus Syrah</h4>
-								<p class="status">In stock</p>
+								<h5 class="name">2015 Big Cirrus Syrah</h5>
+								<p class="status out-of-stock">Out of Stock</p>
 								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia lectus diam, non sodales nunc luctus quis. Mauris sit amet ante aliquet, varius dolor sed, eleifend arcu. Nunc neque mauris, convallis at odio vitae, efficitur lobortis dolor. Integer et massa imperdiet, hendrerit ante nec, porttitor augue.</p>
 								<p class="product details">View Product Details &gt;</p>
 									<p class="rating"><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star redStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i><i class="fa fa-star grayStar" aria-hidden="true"></i></p>
 								<p class="add">
-									<span class="price">$19.99</span>
+									<span style="position:relative;display:inline-block;width:50px;">
+										<span style="position:absolute;bottom:0;" class="retail"><strike>$39.99</strike></span>
+										<span style="position:absolute;top:-5px;" class="price">$19.99</span>
+									</span>
 									<input type="text" value="1" class="radius" />
 									<button class="button tiny add-to-cart radius">Add to cart</button>
 								</p>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 
@@ -285,12 +287,10 @@
 			<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
 			<script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
 			<script src="bower_components/foundation/js/foundation.js"></script>
+			<script src="bower_components/jquery-ui/jquery-ui.js"></script>
 			<!-- endbower -->
-		<!-- endbuild -->
+			<!-- endbuild -->
 
-			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-			 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-			<script src="scripts/app.js"></script>
+			<script src="scripts/external/app.js"></script>
 		</body>
 </html>

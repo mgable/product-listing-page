@@ -365,7 +365,8 @@ module.exports = function (grunt) {
             'images/{,*/}*.*',
             'styles/fonts/{,*/}*.*',
             'styles/external/{,*/}*.*',
-            'scripts/external/{,*/}*.js'
+            'scripts/index/index.js',
+            'scripts/external/*.js'
           ]
         }, {
           expand: true,
@@ -432,7 +433,24 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
-
+ grunt.registerTask('build', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'sass',
+    'ngtemplates',
+    'concat',
+    'ngAnnotate',
+    'copy:dist',
+    // 'cdnify',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
 
   grunt.registerTask('default', "start", function(target){
      grunt.task.run(['serve:' + target]);
