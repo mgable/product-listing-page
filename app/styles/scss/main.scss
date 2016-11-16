@@ -1,5 +1,6 @@
 $lightgray: #eee;
 $gray:     #cacaca;
+$darkerGary: #aaa;
 $redWine: #910b0b;
 $black: #222;
 
@@ -189,9 +190,10 @@ body {
 	}
 
 	.expander {
-		font-weight: bold;
 		color: $black;
 		text-decoration: underline;
+		display: inline-block;
+		margin: 5px 0 0 18px;
 	}
 
 	.clear-all{
@@ -213,6 +215,11 @@ body {
 		font-size: 13px;
 		height: 32px;
 		padding: 4px 20px;
+	}
+
+	button.tiny.add-to-cart[disabled]{
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 
 
@@ -293,7 +300,7 @@ body {
 			margin: 0 10px 0 0;
 			img {
 				height:250px;
-				margin: 0 0 0 10px;
+				margin: 0 0 0 15px;
 			}
 		}
 
@@ -347,10 +354,12 @@ body {
 
 	.priceRange {
 		border:0; 
+		padding: 0 .5rem 0 .5rem;
 		font-weight:bold; 
 		background-color:transparent !important;
 		box-shadow: none !important;
 		margin: 0;
+		height: 2rem;
 	}
 
 	.price {
@@ -413,10 +422,13 @@ body {
 		}
 	}
 
-	ul li:hover {
-		font-weight: bold;
-		color: $redWine;
-		cursor: pointer;
+	ul li{
+		color: $darkerGary;
+		&:hover {
+			font-weight: bold;
+			color: $redWine;
+			cursor: pointer;
+		}
 	}
 
 }

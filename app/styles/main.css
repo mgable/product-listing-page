@@ -111,9 +111,10 @@ body {
     height: 20px;
     width: calc(100% / 3); }
   body .expander {
-    font-weight: bold;
     color: #222;
-    text-decoration: underline; }
+    text-decoration: underline;
+    display: inline-block;
+    margin: 5px 0 0 18px; }
   body .clear-all {
     margin: 10px 0 0 0;
     display: inline-block;
@@ -128,6 +129,9 @@ body {
     font-size: 13px;
     height: 32px;
     padding: 4px 20px; }
+  body button.tiny.add-to-cart[disabled] {
+    cursor: not-allowed;
+    pointer-events: none; }
   body .bottle-count {
     margin: 0;
     padding: 0;
@@ -185,7 +189,7 @@ body {
       margin: 0 10px 0 0; }
       body .item .image-holder img {
         height: 250px;
-        margin: 0 0 0 10px; }
+        margin: 0 0 0 15px; }
     body .item .text {
       width: calc(100% - 100px); }
     body .item .add {
@@ -218,10 +222,12 @@ body {
       right: 0; }
   body .priceRange {
     border: 0;
+    padding: 0 .5rem 0 .5rem;
     font-weight: bold;
     background-color: transparent !important;
     box-shadow: none !important;
-    margin: 0; }
+    margin: 0;
+    height: 2rem; }
   body .price {
     font-weight: bold; }
   body .red {
@@ -254,10 +260,12 @@ body {
   @media (min-width: 640px) {
     body .mobile {
       display: none; } }
-  body ul li:hover {
-    font-weight: bold;
-    color: #910b0b;
-    cursor: pointer; }
+  body ul li {
+    color: #aaa; }
+    body ul li:hover {
+      font-weight: bold;
+      color: #910b0b;
+      cursor: pointer; }
 
 .clearfix:after {
   content: "";
